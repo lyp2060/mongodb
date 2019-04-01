@@ -1,0 +1,46 @@
+use fullstack (your db name)
+db
+show dbs
+
+mongod--->start a mongdb server
+mongo---->start a client 
+
+-->where by = 'tutorials point'
+db.mycol.find({"by":"tutorials point"}).pretty()
+-->where likes < 50
+db.mycol.find({"likes":{$lt:50}}).pretty()
+--->where likes <= 50
+db.mycol.find({"likes":{$lte:50}}).pretty()
+---->where likes > 50
+db.mycol.find({"likes":{$gt:50}}).pretty()
+----->where likes >= 50
+db.mycol.find({"likes":{$gte:50}}).pretty()
+---->where likes != 50
+db.mycol.find({"likes":{$ne:50}}).pretty()
+
+
+#find
+db.COLLECTION_NAME.find()
+
+#The update() method updates the values in the existing document.
+db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}})
+
+By default, MongoDB will update only a single document. To update multiple documents, you need to set a parameter 'multi' to true.
+>db.mycol.update({'title':'MongoDB Overview'},
+{$set:{'title':'New MongoDB Tutorial'}},{multi:true})
+
+
+The save() method replaces the existing document with the new document passed in the save() method.
+>db.mycol.save(
+   {
+      "_id" : ObjectId(5983548781331adf45ec5), "title":"Tutorials Point New Topic",
+      "by":"Tutorials Point"
+   }
+)
+
+#remove()
+
+#sort, 1 is ascending, -1 is descending
+
+db.COLLECTION_NAME.find().sort({KEY:1})
+
