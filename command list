@@ -38,7 +38,8 @@ The save() method replaces the existing document with the new document passed in
    }
 )
 
-#remove()
+#remove(), will remove all the documents whose title is "MongDB overview"
+db.mycol.remove({'title':'MongoDB Overview'})
 
 #sort, 1 is ascending, -1 is descending
 
